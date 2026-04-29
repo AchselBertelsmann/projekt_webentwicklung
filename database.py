@@ -1,9 +1,9 @@
 import sqlite3
 
-# Verbinde dich mit der Datenbank (Datei wird automatisch erstellt, wenn sie nicht existiert)
+# Verbindung zu Datenbank herstellen
 con = sqlite3.connect("analog.db")
 
-# Lies das Schema und führe alle CREATE TABLE Befehle aus
+# Schema.sql einlesen und Datenbank erstellen
 with open("schema.sql") as f:
     con.executescript(f.read())
 
