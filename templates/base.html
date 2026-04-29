@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> 
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 
-<title>{% block title %}Analog Archive{% endblock %}</title>
+<title>{% block title %}Analog-Lexikon{% endblock %}</title> <!-- Titel für Tab -->
 
 <head>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light"> <!-- Navigation mit Dropdown -->
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navigation</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,9 +27,9 @@
             Kameras
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">35mm-Kameras</a></li>
+            <li><a class="dropdown-item" href="#">Mittelformat-Kameras</a></li>
+            <li><a class="dropdown-item" href="#">Halbformat-Kameras</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -37,9 +37,11 @@
             Filme
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Schwarzweiss-Film</a></li>
+            <li><a class="dropdown-item" href="#">Farbnegativfilm</a></li>
+            <li><a class="dropdown-item" href="#">Kinofilm (ECN2-Entwicklung)</a></li>
+            <li><a class="dropdown-item" href="#">Diafilm</a></li>
+
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -47,13 +49,23 @@
             Objektive
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Festbrennweiten</a></li>
+            <li><a class="dropdown-item" href="#">Zoom-Objektive</a></li>
           </ul>
         </li>
       </ul>
     </div>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Suche" aria-label="Suche">
+      <button class="btn btn-outline-success" type="submit">Suchen</button>
+    </form>
   </div>
 </nav>
+
+<div class="container"> <!-- Markiert was für Index eingefügt wird -->
+    {% block index %}
+    
+    {% endblock %}
+</div>
+
 </body>

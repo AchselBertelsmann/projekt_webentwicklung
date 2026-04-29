@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block index %}
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/camera.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Kameras</h5>
+        <p class="card-text">Alle Informationen zu Kameras.</p>
+        <a href="#" class="btn btn-primary">Zu den Kameras</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/film.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Filme</h5>
+        <p class="card-text">Alle Informationen zu Filmen.</p>
+        <a href="#" class="btn btn-primary">Zu den Filmen</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/lens.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Objektive</h5>
+        <p class="card-text">Alle Informationen zu Objektiven.</p>
+        <a href="#" class="btn btn-primary">Zu den Objektiven</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+{% endblock %}
