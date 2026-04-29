@@ -1,0 +1,64 @@
+// Noch keinen Account erstellt, daher hier Code zwischengespeichert bis Account erstellt ist (dbdiagramm.io)
+
+Table hersteller {
+  id            integer [primary key, increment]
+  name          varchar [not null]
+  land          varchar
+  wikidata_id   varchar [unique]
+  dbpedia_uri   varchar
+}
+
+Table kamera {
+  id            integer [primary key, increment]
+  name          varchar [not null]
+  hersteller_id integer [not null]
+  baujahr       integer
+  kameratyp     varchar
+  beschreibung  text
+  bild_pfad     varchar
+  wikidata_id   varchar [unique]
+  dbpedia_uri   varchar
+}
+
+Table film {
+  id            integer [primary key, increment]
+  name          varchar [not null]
+  hersteller_id integer [not null]
+  iso           integer
+  format        varchar
+  typ           varchar
+  beschreibung  text
+  bild_pfad     varchar
+  wikidata_id   varchar [unique]
+  dbpedia_uri   varchar
+}
+
+Table tag {
+  id   integer [primary key, increment]
+  name varchar [not null, unique]
+}
+
+Table kamera_tag {
+  kamera_id integer
+  tag_id    integer
+
+  indexes {
+    (kamera_id, tag_id) [pk]
+  }
+}
+
+Table film_tag {
+  film_id integer
+  tag_id  integer
+
+  indexes {
+    (film_id, tag_id) [pk]
+  }
+}
+
+Ref: kamera.hersteller_id > hersteller.id
+Ref: film.hersteller_id > hersteller.id
+Ref: kamera_tag.kamera_id > kamera.id
+Ref: kamera_tag.tag_id > tag.id
+Ref: film_tag.film_id > film.id
+Ref: film_tag.tag_id > tag.id
