@@ -1,7 +1,9 @@
 import sqlite3
 
-conn = sqlite3.connect("analog.db")
-cursor = conn.cursor()
+
+
+conn = sqlite3.connect("analog.db") # Verbindung zu DB herstellen
+cursor = conn.cursor() # 
 
 hersteller = [
     {"name": "Canon", "land": "Japan", "wikidata_id": "Q192164"},
@@ -59,8 +61,8 @@ cursor.executemany("""
 print("Objektive befüllt")
 
 
-conn.commit()
+conn.commit() # Speichern
 print("Änderungen gespeichert")
 
-conn.close()
+conn.close() # Schließen
 print("fertig")
