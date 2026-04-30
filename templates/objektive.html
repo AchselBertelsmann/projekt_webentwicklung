@@ -1,3 +1,29 @@
-{% block objektive %}
-<h1>test</h1>
-{% endblock %}
+{% extends "base.html" %}
+
+{% block index %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Lichtstärke von</th>
+      <th scope="col">Lichtstärke bis</th>
+      <th scope="col">Brennweite von</th>
+      <th scope="col">Brennweite bis</th> 
+      <th scope="col">Baujahr</th>  
+    </tr>
+  </thead>
+  <tbody>
+        {% for objektiv in objektive %}
+    <tr>
+      <th scope="row">{{ objektiv["id"] }}</th>
+      <td>{{ objektiv["lichtstaerke_min"] }}</td>
+      <td>{{ objektiv["lichtstaerke_max"] }}</td>
+      <td>{{ objektiv["brennweite_min"] }}</td>
+      <td>{{ objektiv["brennweite_max"] }}</td>
+      <td>{{ objektiv["baujahr"] }}</td>            
+    </tr>
+        {% endfor %}    
+  </tbody>
+</table>{% endblock %}
+

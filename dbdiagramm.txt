@@ -1,5 +1,5 @@
 // Noch keinen Account erstellt, daher hier Code zwischengespeichert bis Account erstellt ist (dbdiagramm.io)
-
+// Datenbank für Objektive noch hinzufügen!!!
 Table hersteller {
   id            integer [primary key, increment]
   name          varchar [not null]

@@ -20,10 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('kameras') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Kameras
           </a>
           <ul class="dropdown-menu">
@@ -33,19 +33,19 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('filme') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Filme
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Schwarzweiss-Film</a></li>
-            <li><a class="dropdown-item" href="#">Farbnegativfilm</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('farbfilme') }}">Farbnegativfilm</a></li>
             <li><a class="dropdown-item" href="#">Kinofilm (ECN2-Entwicklung)</a></li>
             <li><a class="dropdown-item" href="#">Diafilm</a></li>
 
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('objektive') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Objektive
           </a>
           <ul class="dropdown-menu">

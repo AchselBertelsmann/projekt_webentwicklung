@@ -1,9 +1,7 @@
 import sqlite3
 
-
-
 conn = sqlite3.connect("analog.db") # Verbindung zu DB herstellen
-cursor = conn.cursor() # 
+cursor = conn.cursor() 
 
 hersteller = [
     {"name": "Canon", "land": "Japan", "wikidata_id": "Q192164"},

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block index %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">ISO</th>
+      <th scope="col">Format</th>
+      <th scope="col">Typ</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for farbfilm in farbfilme %}
+    <tr>
+      <th scope="row">{{ farbfilm["id"] }}</th>
+      <td>{{ farbfilm["name"] }}</td>
+      <td>{{ farbfilm["iso"] }}</td>
+      <td>{{ farbfilm["format"] }}</td>
+      <td>{{ farbfilm["typ"] }}</td>
+    </tr>
+        {% endfor %}    
+  </tbody>
+</table>{% endblock %}
